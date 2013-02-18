@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DisconnectedEntitiesDemo.Models.Customer">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisconnectedEntitiesDemo.Models.Order">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>GAEAAAAAEAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Order.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Customer" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="OrderLines" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="DisconnectedEntitiesDemo.Models.OrderLine">
+    <Position X="3.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\OrderLine.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Product" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="DisconnectedEntitiesDemo.Models.Product">
+    <Position X="6.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAgAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DisconnectedEntitiesDemo.Models.OrderChanges">
+    <Position X="1" Y="2" Width="1.5" />
+    <AssociationLine Name="DeletedLines" Type="DisconnectedEntitiesDemo.Models.OrderLine" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="1.812" Y="2.868" />
+        <Point X="1.812" Y="3.688" />
+        <Point X="3.5" Y="3.688" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\OrderChanges.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Order" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="DeletedLines" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

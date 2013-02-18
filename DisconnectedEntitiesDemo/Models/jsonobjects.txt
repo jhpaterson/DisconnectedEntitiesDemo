@@ -1,0 +1,91 @@
+﻿Expected Order object after database seeding from GET api/orders/1
+{
+   "OrderId":1,
+   "OrderDate":"2013-02-15T12:10:28.4",
+   "Customer":{
+      "CustomerId":1,
+      "Name":"Fernando"
+   },
+   "CustomerId":1,
+   "OrderLines":[
+      {
+         "OrderLineId":1,
+         "Quantity":1,
+         "Product":null,
+         "ProductId":1,
+         "OrderId":1
+      },
+      {
+         "OrderLineId":2,
+         "Quantity":2,
+         "Product":null,
+         "ProductId":2,
+         "OrderId":1
+      }
+   ]
+}
+
+
+OrderChanges
+POST to api/orders with Content-Type = "application/json"
+should delete line 1, change quantity of line 2 to 22 and add line 3
+
+{
+   "Order":{
+      "OrderId":1,
+      "OrderDate":"2013-02-15T11:54:17.76",
+      "CustomerId":1,
+      "OrderLines":[
+         {
+            "OrderLineId":2,
+            "Quantity":22,
+            "Product":null,
+            "ProductId":2,
+            "OrderId":1
+         },
+         {
+            "Quantity":33,
+            "Product":null,
+            "ProductId":3,
+            "OrderId":1
+         }
+      ]
+   },
+   "DeletedLines":[
+      {
+         "OrderLineId":1,
+         "Quantity":1,
+         "Product":null,
+         "ProductId":1,
+         "OrderId":1
+      }
+   ]
+}
+
+modified Order after submitting changes, GET api/orders/1
+
+{
+   "OrderId":1,
+   "OrderDate":"2013-02-15T11:54:17.76",
+   "Customer":{
+      "CustomerId":1,
+      "Name":"Fernando"
+   },
+   "CustomerId":1,
+   "OrderLines":[
+      {
+         "OrderLineId":2,
+         "Quantity":22,
+         "Product":null,
+         "ProductId":2,
+         "OrderId":1
+      },
+      {
+         "OrderLineId":3,
+         "Quantity":33,
+         "Product":null,
+         "ProductId":3,
+         "OrderId":1
+      }
+   ]
+}
